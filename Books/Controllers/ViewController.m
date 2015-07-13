@@ -54,7 +54,8 @@ static NSInteger const kColumnNumber = 5;
     [_tableView registerNib:[UINib nibWithNibName:bookCellIdentifier bundle:nil] forCellReuseIdentifier:bookCellIdentifier];
 }
 
-#pragma mark - UITableViewDataSource
+#pragma mark - UITableView
+#pragma mark UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -78,7 +79,7 @@ static NSInteger const kColumnNumber = 5;
     return cell;
 }
 
-#pragma mark - UITableViewDelegate
+#pragma mark UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -106,7 +107,8 @@ static NSInteger const kColumnNumber = 5;
     }
 }
 
-#pragma mark - UICollectionViewDataSource
+#pragma mark - UICollectionView
+#pragma mark UICollectionViewDataSource
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
