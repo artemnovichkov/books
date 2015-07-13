@@ -10,4 +10,6 @@
 
 @interface BookTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *bookTitleLabel;
+
 @end

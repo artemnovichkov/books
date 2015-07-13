@@ -47,12 +47,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *bookCellIdentifier = NSStringFromClass([BookTableViewCell class]);
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:bookCellIdentifier forIndexPath:indexPath];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:bookCellIdentifier];
-    }
+    BookTableViewCell *cell = (BookTableViewCell *)[tableView dequeueReusableCellWithIdentifier:bookCellIdentifier
+                                                                                   forIndexPath:indexPath];
     NSDictionary *book = _books[indexPath.row];
-    cell.textLabel.text = [[book allKeys] firstObject];
+    cell.bookTitleLabel.text = [[book allKeys] firstObject];
     return cell;
 }
 
