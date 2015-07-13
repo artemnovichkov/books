@@ -19,7 +19,7 @@
                             <constraint firstAttribute="height" constant="21" id="LWH-L8-raq"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.21960784310000001" green="0.31372549020000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="pSE-oU-Oie" customClass="CustomCollectionView">
@@ -35,6 +35,7 @@
                         </collectionViewFlowLayout>
                     </collectionView>
                 </subviews>
+                <color key="backgroundColor" red="0.84705882349999995" green="0.94117647059999998" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstItem="pSE-oU-Oie" firstAttribute="top" secondItem="72e-WO-fdH" secondAttribute="bottom" constant="8" id="1kb-GT-vPm"/>
                     <constraint firstItem="pSE-oU-Oie" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="3K6-8u-5O4"/>
