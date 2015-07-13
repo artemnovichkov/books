@@ -13,6 +13,8 @@
 		06A895301B53B8DE004C1C5A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A8952F1B53B8DE004C1C5A /* ViewController.m */; };
 		06A895351B53B8EC004C1C5A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A895321B53B8EC004C1C5A /* AppDelegate.m */; };
 		06A895371B53B8EC004C1C5A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A895341B53B8EC004C1C5A /* main.m */; };
+		06A8953E1B53C2CD004C1C5A /* BookTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A8953C1B53C2CD004C1C5A /* BookTableViewCell.m */; };
+		06A8953F1B53C2CD004C1C5A /* BookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06A8953D1B53C2CD004C1C5A /* BookTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,9 @@
 		06A895321B53B8EC004C1C5A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Books/Application/AppDelegate.m; sourceTree = "<group>"; };
 		06A895331B53B8EC004C1C5A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Books/Application/Info.plist; sourceTree = "<group>"; };
 		06A895341B53B8EC004C1C5A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Books/Application/main.m; sourceTree = "<group>"; };
+		06A8953B1B53C2CD004C1C5A /* BookTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookTableViewCell.h; path = Books/Views/BookTableViewCell.h; sourceTree = "<group>"; };
+		06A8953C1B53C2CD004C1C5A /* BookTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookTableViewCell.m; path = Books/Views/BookTableViewCell.m; sourceTree = "<group>"; };
+		06A8953D1B53C2CD004C1C5A /* BookTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BookTableViewCell.xib; path = Books/Views/BookTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +47,7 @@
 		06A894F71B53B824004C1C5A = {
 			isa = PBXGroup;
 			children = (
+				06A895381B53C296004C1C5A /* Views */,
 				06A8952B1B53B85E004C1C5A /* Recources */,
 				06A8952A1B53B855004C1C5A /* Controllers */,
 				06A895291B53B83B004C1C5A /* Application */,
@@ -85,6 +91,16 @@
 				06A8952C1B53B8D4004C1C5A /* Images.xcassets */,
 			);
 			name = Recources;
+			sourceTree = "<group>";
+		};
+		06A895381B53C296004C1C5A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				06A8953B1B53C2CD004C1C5A /* BookTableViewCell.h */,
+				06A8953C1B53C2CD004C1C5A /* BookTableViewCell.m */,
+				06A8953D1B53C2CD004C1C5A /* BookTableViewCell.xib */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +163,7 @@
 				06A8952D1B53B8D4004C1C5A /* Images.xcassets in Resources */,
 				06A8950F1B53B824004C1C5A /* Main.storyboard in Resources */,
 				06A895141B53B824004C1C5A /* LaunchScreen.xib in Resources */,
+				06A8953F1B53C2CD004C1C5A /* BookTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +174,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06A8953E1B53C2CD004C1C5A /* BookTableViewCell.m in Sources */,
 				06A895351B53B8EC004C1C5A /* AppDelegate.m in Sources */,
 				06A895371B53B8EC004C1C5A /* main.m in Sources */,
 				06A895301B53B8DE004C1C5A /* ViewController.m in Sources */,
