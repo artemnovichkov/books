@@ -29,6 +29,7 @@ UICollectionViewDelegateFlowLayout
 
 static CGFloat const kTableViewCellHeight = 45.f;
 static CGFloat const kCollectionViewCellHeight = 20.f;
+static CGFloat const kInteritemSpacing = 2.f;
 
 @implementation ViewController
 
@@ -123,25 +124,36 @@ static CGFloat const kCollectionViewCellHeight = 20.f;
     NSString *bookTitle = [NSString stringWithFormat:@"Book %ld", customCollectionView.indexPath.row + 1];
     NSArray *chapters = book[bookTitle];
     cell.chapterTitleLabel.text = chapters[indexPath.row];
-    cell.backgroundColor = [UIColor redColor];
     return cell;
+}
+
+#pragma mark - UICollectionViewDelegate
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CustomCollectionView *customCollectionView = (CustomCollectionView *)collectionView;
+    NSDictionary *book = _books[customCollectionView.indexPath.row];
+    NSString *bookTitle = [NSString stringWithFormat:@"Book %ld", customCollectionView.indexPath.row + 1];
+    NSArray *chapters = book[bookTitle];
+    NSLog(@"You selected %@ in %@", chapters[indexPath.row], bookTitle);
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(CGRectGetWidth(collectionView.frame) / 5, CGRectGetHeight(collectionView.frame) / 5);
+    return CGSizeMake((CGRectGetWidth(collectionView.frame) - kInteritemSpacing * 5) / 5,
+                      (CGRectGetHeight(collectionView.frame) - kInteritemSpacing * 5) / 5);
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
 {
-    return 0.0;
+    return kInteritemSpacing;
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
 {
-    return 0.0;
+    return kInteritemSpacing;
 }
 
 @end
