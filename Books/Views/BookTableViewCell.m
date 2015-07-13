@@ -23,6 +23,13 @@
     _collectionViewHeightConstraint.constant = 0.f;
     [self setNeedsUpdateConstraints];
     _collectionView.backgroundColor = self.backgroundColor;
+    
+    UIView *bgColorView = [[UIView alloc] init];
+    bgColorView.backgroundColor = [UIColor colorWithRed:146.0 / 255.0
+                                                  green:192.0 / 255.0
+                                                   blue:96.0 / 255.0
+                                                  alpha:1.0];
+    [self setSelectedBackgroundView:bgColorView];
 }
 
 - (UIEdgeInsets)layoutMargins
@@ -44,21 +51,15 @@
 - (void)showChapters
 {
     _chapterShowing = YES;
-    [UIView animateWithDuration:2.0 animations:^{
-        _collectionViewHeightConstraint.constant = 200.f;
-        [self setNeedsDisplay];
-        [self setNeedsUpdateConstraints];
-    }];
+    _collectionViewHeightConstraint.constant = 200.f;
+    [self layoutIfNeeded];
 }
 
 - (void)hideChapters
 {
     _chapterShowing = NO;
-    [UIView animateWithDuration:2.0 animations:^{
-        _collectionViewHeightConstraint.constant = 0.f;
-        [self setNeedsDisplay];
-        [self setNeedsUpdateConstraints];
-    }];
+    _collectionViewHeightConstraint.constant = 0.f;
+    [self layoutIfNeeded];
 }
 
 @end
