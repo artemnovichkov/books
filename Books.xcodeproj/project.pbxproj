@@ -55,9 +55,9 @@
 		06A894F71B53B824004C1C5A = {
 			isa = PBXGroup;
 			children = (
+				06A8952A1B53B855004C1C5A /* Controllers */,
 				06A895381B53C296004C1C5A /* Views */,
 				06A8952B1B53B85E004C1C5A /* Recources */,
-				06A8952A1B53B855004C1C5A /* Controllers */,
 				06A895291B53B83B004C1C5A /* Application */,
 				06A895011B53B824004C1C5A /* Products */,
 			);
