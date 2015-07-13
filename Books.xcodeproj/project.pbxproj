@@ -7,50 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		06A895061B53B824004C1C5A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A895051B53B824004C1C5A /* main.m */; };
-		06A895091B53B824004C1C5A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A895081B53B824004C1C5A /* AppDelegate.m */; };
-		06A8950C1B53B824004C1C5A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A8950B1B53B824004C1C5A /* ViewController.m */; };
 		06A8950F1B53B824004C1C5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06A8950D1B53B824004C1C5A /* Main.storyboard */; };
-		06A895111B53B824004C1C5A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06A895101B53B824004C1C5A /* Images.xcassets */; };
 		06A895141B53B824004C1C5A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06A895121B53B824004C1C5A /* LaunchScreen.xib */; };
-		06A895201B53B824004C1C5A /* BooksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A8951F1B53B824004C1C5A /* BooksTests.m */; };
+		06A8952D1B53B8D4004C1C5A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06A8952C1B53B8D4004C1C5A /* Images.xcassets */; };
+		06A895301B53B8DE004C1C5A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A8952F1B53B8DE004C1C5A /* ViewController.m */; };
+		06A895351B53B8EC004C1C5A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A895321B53B8EC004C1C5A /* AppDelegate.m */; };
+		06A895361B53B8EC004C1C5A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06A895331B53B8EC004C1C5A /* Info.plist */; };
+		06A895371B53B8EC004C1C5A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A895341B53B8EC004C1C5A /* main.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		06A8951A1B53B824004C1C5A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 06A894F81B53B824004C1C5A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 06A894FF1B53B824004C1C5A;
-			remoteInfo = Books;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		06A895001B53B824004C1C5A /* Books.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Books.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		06A895041B53B824004C1C5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		06A895051B53B824004C1C5A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		06A895071B53B824004C1C5A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		06A895081B53B824004C1C5A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		06A8950A1B53B824004C1C5A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		06A8950B1B53B824004C1C5A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		06A8950E1B53B824004C1C5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		06A895101B53B824004C1C5A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		06A895131B53B824004C1C5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		06A895191B53B824004C1C5A /* BooksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BooksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		06A8951E1B53B824004C1C5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		06A8951F1B53B824004C1C5A /* BooksTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BooksTests.m; sourceTree = "<group>"; };
+		06A8952C1B53B8D4004C1C5A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Books/Recources/Images.xcassets; sourceTree = "<group>"; };
+		06A8952E1B53B8DE004C1C5A /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Books/Controllers/ViewController.h; sourceTree = "<group>"; };
+		06A8952F1B53B8DE004C1C5A /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Books/Controllers/ViewController.m; sourceTree = "<group>"; };
+		06A895311B53B8EC004C1C5A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Books/Application/AppDelegate.h; sourceTree = "<group>"; };
+		06A895321B53B8EC004C1C5A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Books/Application/AppDelegate.m; sourceTree = "<group>"; };
+		06A895331B53B8EC004C1C5A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Books/Application/Info.plist; sourceTree = "<group>"; };
+		06A895341B53B8EC004C1C5A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Books/Application/main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		06A894FD1B53B824004C1C5A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		06A895161B53B824004C1C5A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -63,8 +43,9 @@
 		06A894F71B53B824004C1C5A = {
 			isa = PBXGroup;
 			children = (
-				06A895021B53B824004C1C5A /* Books */,
-				06A8951C1B53B824004C1C5A /* BooksTests */,
+				06A8952B1B53B85E004C1C5A /* Recources */,
+				06A8952A1B53B855004C1C5A /* Controllers */,
+				06A895291B53B83B004C1C5A /* Application */,
 				06A895011B53B824004C1C5A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -73,50 +54,38 @@
 			isa = PBXGroup;
 			children = (
 				06A895001B53B824004C1C5A /* Books.app */,
-				06A895191B53B824004C1C5A /* BooksTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		06A895021B53B824004C1C5A /* Books */ = {
+		06A895291B53B83B004C1C5A /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				06A895071B53B824004C1C5A /* AppDelegate.h */,
-				06A895081B53B824004C1C5A /* AppDelegate.m */,
-				06A8950A1B53B824004C1C5A /* ViewController.h */,
-				06A8950B1B53B824004C1C5A /* ViewController.m */,
+				06A895311B53B8EC004C1C5A /* AppDelegate.h */,
+				06A895321B53B8EC004C1C5A /* AppDelegate.m */,
+				06A895331B53B8EC004C1C5A /* Info.plist */,
+				06A895341B53B8EC004C1C5A /* main.m */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		06A8952A1B53B855004C1C5A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				06A8952E1B53B8DE004C1C5A /* ViewController.h */,
+				06A8952F1B53B8DE004C1C5A /* ViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		06A8952B1B53B85E004C1C5A /* Recources */ = {
+			isa = PBXGroup;
+			children = (
 				06A8950D1B53B824004C1C5A /* Main.storyboard */,
-				06A895101B53B824004C1C5A /* Images.xcassets */,
 				06A895121B53B824004C1C5A /* LaunchScreen.xib */,
-				06A895031B53B824004C1C5A /* Supporting Files */,
+				06A8952C1B53B8D4004C1C5A /* Images.xcassets */,
 			);
-			path = Books;
-			sourceTree = "<group>";
-		};
-		06A895031B53B824004C1C5A /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				06A895041B53B824004C1C5A /* Info.plist */,
-				06A895051B53B824004C1C5A /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		06A8951C1B53B824004C1C5A /* BooksTests */ = {
-			isa = PBXGroup;
-			children = (
-				06A8951F1B53B824004C1C5A /* BooksTests.m */,
-				06A8951D1B53B824004C1C5A /* Supporting Files */,
-			);
-			path = BooksTests;
-			sourceTree = "<group>";
-		};
-		06A8951D1B53B824004C1C5A /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				06A8951E1B53B824004C1C5A /* Info.plist */,
-			);
-			name = "Supporting Files";
+			name = Recources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,24 +108,6 @@
 			productReference = 06A895001B53B824004C1C5A /* Books.app */;
 			productType = "com.apple.product-type.application";
 		};
-		06A895181B53B824004C1C5A /* BooksTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 06A895261B53B824004C1C5A /* Build configuration list for PBXNativeTarget "BooksTests" */;
-			buildPhases = (
-				06A895151B53B824004C1C5A /* Sources */,
-				06A895161B53B824004C1C5A /* Frameworks */,
-				06A895171B53B824004C1C5A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				06A8951B1B53B824004C1C5A /* PBXTargetDependency */,
-			);
-			name = BooksTests;
-			productName = BooksTests;
-			productReference = 06A895191B53B824004C1C5A /* BooksTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -168,10 +119,6 @@
 				TargetAttributes = {
 					06A894FF1B53B824004C1C5A = {
 						CreatedOnToolsVersion = 6.4;
-					};
-					06A895181B53B824004C1C5A = {
-						CreatedOnToolsVersion = 6.4;
-						TestTargetID = 06A894FF1B53B824004C1C5A;
 					};
 				};
 			};
@@ -189,7 +136,6 @@
 			projectRoot = "";
 			targets = (
 				06A894FF1B53B824004C1C5A /* Books */,
-				06A895181B53B824004C1C5A /* BooksTests */,
 			);
 		};
 /* End PBXProject section */
@@ -199,16 +145,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06A895361B53B8EC004C1C5A /* Info.plist in Resources */,
+				06A8952D1B53B8D4004C1C5A /* Images.xcassets in Resources */,
 				06A8950F1B53B824004C1C5A /* Main.storyboard in Resources */,
 				06A895141B53B824004C1C5A /* LaunchScreen.xib in Resources */,
-				06A895111B53B824004C1C5A /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		06A895171B53B824004C1C5A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,29 +159,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06A8950C1B53B824004C1C5A /* ViewController.m in Sources */,
-				06A895091B53B824004C1C5A /* AppDelegate.m in Sources */,
-				06A895061B53B824004C1C5A /* main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		06A895151B53B824004C1C5A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				06A895201B53B824004C1C5A /* BooksTests.m in Sources */,
+				06A895351B53B8EC004C1C5A /* AppDelegate.m in Sources */,
+				06A895371B53B8EC004C1C5A /* main.m in Sources */,
+				06A895301B53B8DE004C1C5A /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		06A8951B1B53B824004C1C5A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 06A894FF1B53B824004C1C5A /* Books */;
-			targetProxy = 06A8951A1B53B824004C1C5A /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		06A8950D1B53B824004C1C5A /* Main.storyboard */ = {
@@ -250,6 +174,7 @@
 				06A8950E1B53B824004C1C5A /* Base */,
 			);
 			name = Main.storyboard;
+			path = Books;
 			sourceTree = "<group>";
 		};
 		06A895121B53B824004C1C5A /* LaunchScreen.xib */ = {
@@ -258,6 +183,7 @@
 				06A895131B53B824004C1C5A /* Base */,
 			);
 			name = LaunchScreen.xib;
+			path = Books;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -365,40 +291,6 @@
 			};
 			name = Release;
 		};
-		06A895271B53B824004C1C5A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = BooksTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Books.app/Books";
-			};
-			name = Debug;
-		};
-		06A895281B53B824004C1C5A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = BooksTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Books.app/Books";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -416,14 +308,6 @@
 			buildConfigurations = (
 				06A895241B53B824004C1C5A /* Debug */,
 				06A895251B53B824004C1C5A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		06A895261B53B824004C1C5A /* Build configuration list for PBXNativeTarget "BooksTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				06A895271B53B824004C1C5A /* Debug */,
-				06A895281B53B824004C1C5A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
