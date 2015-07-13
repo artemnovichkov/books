@@ -10,4 +10,6 @@
 
 @interface CustomCollectionView : UICollectionView
 
+@property (nonatomic) NSIndexPath *indexPath;
+
 @end
