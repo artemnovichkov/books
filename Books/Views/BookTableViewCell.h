@@ -11,5 +11,10 @@
 @interface BookTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *bookTitleLabel;
+@property (nonatomic) BOOL chapterShowing;
+
+- (void)setCollectionViewDataSourceDelegate:(id<UICollectionViewDataSource, UICollectionViewDelegate>)dataSourceDelegate indexPath:(NSIndexPath *)indexPath;
+- (void)showChapters;
+- (void)hideChapters;
 
 @end

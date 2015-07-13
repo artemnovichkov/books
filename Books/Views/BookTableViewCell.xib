@@ -15,12 +15,18 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72e-WO-fdH">
                         <rect key="frame" x="139" y="8" width="42" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="LWH-L8-raq"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="pSE-oU-Oie">
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="pSE-oU-Oie" customClass="CustomCollectionView">
                         <rect key="frame" x="8" y="37" width="304" height="169"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="169" id="l90-9m-Gmq"/>
+                        </constraints>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4RB-dc-dRc">
                             <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -40,6 +46,8 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="bookTitleLabel" destination="72e-WO-fdH" id="gWq-2P-Xjg"/>
+                <outlet property="collectionView" destination="pSE-oU-Oie" id="ILe-dk-cKR"/>
+                <outlet property="collectionViewHeightConstraint" destination="l90-9m-Gmq" id="ash-WJ-DNL"/>
             </connections>
             <point key="canvasLocation" x="192" y="455.5"/>
         </tableViewCell>

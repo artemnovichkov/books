@@ -7,17 +7,58 @@
 //
 
 #import "BookTableViewCell.h"
+#import "CustomCollectionView.h"
+#import "CollectionViewCell.h"
+
+@interface BookTableViewCell()
+
+@property (weak, nonatomic) IBOutlet CustomCollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *collectionViewHeightConstraint;
+
+@end
 
 @implementation BookTableViewCell
 
 - (void)awakeFromNib {
-    // Initialization code
+    _collectionViewHeightConstraint.constant = 0.f;
+    [self setNeedsUpdateConstraints];
+    _collectionView.backgroundColor = self.backgroundColor;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
+- (UIEdgeInsets)layoutMargins
+{
+    return UIEdgeInsetsZero;
+}
 
-    // Configure the view for the selected state
+#pragma mark - Chapters
+
+- (void)setCollectionViewDataSourceDelegate:(id<UICollectionViewDataSource,UICollectionViewDelegate>)dataSourceDelegate indexPath:(NSIndexPath *)indexPath
+{
+    _collectionView.dataSource = dataSourceDelegate;
+    _collectionView.delegate = dataSourceDelegate;
+    _collectionView.indexPath = indexPath;
+    NSString *identifier = NSStringFromClass([CollectionViewCell class]);
+    [_collectionView registerNib:[UINib nibWithNibName:identifier bundle:nil] forCellWithReuseIdentifier:identifier];
+    [_collectionView reloadData];
+}
+- (void)showChapters
+{
+    _chapterShowing = YES;
+    [UIView animateWithDuration:2.0 animations:^{
+        _collectionViewHeightConstraint.constant = 200.f;
+        [self setNeedsDisplay];
+        [self setNeedsUpdateConstraints];
+    }];
+}
+
+- (void)hideChapters
+{
+    _chapterShowing = NO;
+    [UIView animateWithDuration:2.0 animations:^{
+        _collectionViewHeightConstraint.constant = 0.f;
+        [self setNeedsDisplay];
+        [self setNeedsUpdateConstraints];
+    }];
 }
 
 @end
