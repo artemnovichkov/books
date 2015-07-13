@@ -7,8 +7,12 @@
 //
 
 #import "ViewController.h"
+#import "BookTableViewCell.h"
 
-@interface ViewController ()
+@interface ViewController () <UITableViewDataSource, UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic) NSMutableArray *books;
 
 @end
 
@@ -16,23 +20,49 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _books = [@{} mutableCopy];
+    _books = [@[] mutableCopy];
     for (int i = 0; i < 50; i++) {
-        NSMutableArray *book = [@[] mutableCopy];
+        NSMutableDictionary *book = [@{} mutableCopy];
+        NSMutableArray *chapters = [@[] mutableCopy];
         NSInteger chapterCount = arc4random() % 100;
         for (int j = 0; j < chapterCount; j++) {
             NSString *chapterTitle = [NSString stringWithFormat:@"Chapter %i", j + 1];
-            [book addObject:chapterTitle];
+            [chapters addObject:chapterTitle];
         }
         NSString *bookTitle = [NSString stringWithFormat:@"Book %i", i + 1];
-        self.books[bookTitle] = book;
+        book[bookTitle] = chapters;
+        [_books addObject:book];
     }
-    
+    NSString *bookCellIdentifier = NSStringFromClass([BookTableViewCell class]);
+    [_tableView registerNib:[UINib nibWithNibName:bookCellIdentifier bundle:nil] forCellReuseIdentifier:bookCellIdentifier];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return _books.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *bookCellIdentifier = NSStringFromClass([BookTableViewCell class]);
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:bookCellIdentifier forIndexPath:indexPath];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:bookCellIdentifier];
+    }
+    NSDictionary *book = _books[indexPath.row];
+    cell.textLabel.text = [[book allKeys] firstObject];
+    return cell;
+}
+
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    NSArray *chapters = _books[indexPath.row];
+    NSLog(@"%@", chapters);
 }
 
 @end
