@@ -8,13 +8,27 @@
 
 #import "ViewController.h"
 #import "BookTableViewCell.h"
+#import "CustomCollectionView.h"
+#import "CollectionViewCell.h"
 
-@interface ViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface ViewController ()
+<
+UITableViewDataSource,
+UITableViewDelegate,
+UICollectionViewDataSource,
+UICollectionViewDelegate,
+UICollectionViewDelegateFlowLayout
+>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) NSMutableArray *books;
 
+@property (nonatomic) NSIndexPath *selectedIndexPath;
+
 @end
+
+static CGFloat const kTableViewCellHeight = 45.f;
+static CGFloat const kCollectionViewCellHeight = 20.f;
 
 @implementation ViewController
 
@@ -26,10 +40,10 @@
         NSMutableArray *chapters = [@[] mutableCopy];
         NSInteger chapterCount = arc4random() % 100;
         for (int j = 0; j < chapterCount; j++) {
-            NSString *chapterTitle = [NSString stringWithFormat:@"Chapter %i", j + 1];
+            NSString *chapterTitle = [NSString stringWithFormat:@"Chapter %d", j + 1];
             [chapters addObject:chapterTitle];
         }
-        NSString *bookTitle = [NSString stringWithFormat:@"Book %i", i + 1];
+        NSString *bookTitle = [NSString stringWithFormat:@"Book %d", i + 1];
         book[bookTitle] = chapters;
         [_books addObject:book];
     }
@@ -49,8 +63,15 @@
     NSString *bookCellIdentifier = NSStringFromClass([BookTableViewCell class]);
     BookTableViewCell *cell = (BookTableViewCell *)[tableView dequeueReusableCellWithIdentifier:bookCellIdentifier
                                                                                    forIndexPath:indexPath];
+    [cell setCollectionViewDataSourceDelegate:self indexPath:indexPath];
     NSDictionary *book = _books[indexPath.row];
     cell.bookTitleLabel.text = [[book allKeys] firstObject];
+    if (indexPath == _selectedIndexPath) {
+        [cell showChapters];
+    }
+    else {
+        [cell hideChapters];
+    }
     return cell;
 }
 
@@ -58,9 +79,69 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    NSArray *chapters = _books[indexPath.row];
-    NSLog(@"%@", chapters);
+    _selectedIndexPath = indexPath;
+    BookTableViewCell *cell = (BookTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+    [cell showChapters];
+    [tableView reloadData];
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    BookTableViewCell *cell = (BookTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+    [cell hideChapters];
+    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath == _selectedIndexPath) {
+        return kTableViewCellHeight + 5 * kCollectionViewCellHeight;
+    }
+    else {
+        return kTableViewCellHeight;
+    }
+}
+
+#pragma mark - UICollectionViewDataSource
+
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    CustomCollectionView *customCollectionView = (CustomCollectionView *)collectionView;
+    NSDictionary *book = _books[customCollectionView.indexPath.row];
+    NSString *bookTitle = [NSString stringWithFormat:@"Book %ld", customCollectionView.indexPath.row + 1];
+    NSArray *chapters = book[bookTitle];
+    return chapters.count;
+}
+
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *identifier = NSStringFromClass([CollectionViewCell class]);
+    CollectionViewCell *cell = (CollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:identifier
+                                                                                               forIndexPath:indexPath];
+    CustomCollectionView *customCollectionView = (CustomCollectionView *)collectionView;
+    NSDictionary *book = _books[customCollectionView.indexPath.row];
+    NSString *bookTitle = [NSString stringWithFormat:@"Book %ld", customCollectionView.indexPath.row + 1];
+    NSArray *chapters = book[bookTitle];
+    cell.chapterTitleLabel.text = chapters[indexPath.row];
+    cell.backgroundColor = [UIColor redColor];
+    return cell;
+}
+
+#pragma mark - UICollectionViewDelegateFlowLayout
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake(CGRectGetWidth(collectionView.frame) / 5, CGRectGetHeight(collectionView.frame) / 5);
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
+{
+    return 0.0;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
+{
+    return 0.0;
 }
 
 @end
