@@ -15,6 +15,7 @@
 		06A895371B53B8EC004C1C5A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A895341B53B8EC004C1C5A /* main.m */; };
 		06A8953E1B53C2CD004C1C5A /* BookTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A8953C1B53C2CD004C1C5A /* BookTableViewCell.m */; };
 		06A8953F1B53C2CD004C1C5A /* BookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06A8953D1B53C2CD004C1C5A /* BookTableViewCell.xib */; };
+		06A895481B53C894004C1C5A /* CustomCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A895471B53C894004C1C5A /* CustomCollectionView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,8 @@
 		06A8953B1B53C2CD004C1C5A /* BookTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookTableViewCell.h; path = Books/Views/BookTableViewCell.h; sourceTree = "<group>"; };
 		06A8953C1B53C2CD004C1C5A /* BookTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookTableViewCell.m; path = Books/Views/BookTableViewCell.m; sourceTree = "<group>"; };
 		06A8953D1B53C2CD004C1C5A /* BookTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BookTableViewCell.xib; path = Books/Views/BookTableViewCell.xib; sourceTree = "<group>"; };
+		06A895461B53C894004C1C5A /* CustomCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomCollectionView.h; path = Books/Views/CustomCollectionView.h; sourceTree = "<group>"; };
+		06A895471B53C894004C1C5A /* CustomCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomCollectionView.m; path = Books/Views/CustomCollectionView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +99,8 @@
 		06A895381B53C296004C1C5A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				06A895461B53C894004C1C5A /* CustomCollectionView.h */,
+				06A895471B53C894004C1C5A /* CustomCollectionView.m */,
 				06A8953B1B53C2CD004C1C5A /* BookTableViewCell.h */,
 				06A8953C1B53C2CD004C1C5A /* BookTableViewCell.m */,
 				06A8953D1B53C2CD004C1C5A /* BookTableViewCell.xib */,
@@ -176,6 +181,7 @@
 			files = (
 				06A8953E1B53C2CD004C1C5A /* BookTableViewCell.m in Sources */,
 				06A895351B53B8EC004C1C5A /* AppDelegate.m in Sources */,
+				06A895481B53C894004C1C5A /* CustomCollectionView.m in Sources */,
 				06A895371B53B8EC004C1C5A /* main.m in Sources */,
 				06A895301B53B8DE004C1C5A /* ViewController.m in Sources */,
 			);
