@@ -30,6 +30,8 @@ UICollectionViewDelegateFlowLayout
 static CGFloat const kTableViewCellHeight = 45.f;
 static CGFloat const kCollectionViewCellHeight = 20.f;
 static CGFloat const kInteritemSpacing = 2.f;
+static NSInteger const kRowNumber = 5;
+static NSInteger const kColumnNumber = 5;
 
 @implementation ViewController
 
@@ -82,6 +84,7 @@ static CGFloat const kInteritemSpacing = 2.f;
 {
     _selectedIndexPath = indexPath;
     BookTableViewCell *cell = (BookTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+    [tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
     [cell showChapters];
     [tableView reloadData];
 }
@@ -142,8 +145,8 @@ static CGFloat const kInteritemSpacing = 2.f;
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake((CGRectGetWidth(collectionView.frame) - kInteritemSpacing * 5) / 5,
-                      (CGRectGetHeight(collectionView.frame) - kInteritemSpacing * 5) / 5);
+    return CGSizeMake((CGRectGetWidth(collectionView.frame) - kInteritemSpacing * kRowNumber) / kRowNumber,
+                      (CGRectGetHeight(collectionView.frame) - kInteritemSpacing * kColumnNumber) / kColumnNumber);
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
